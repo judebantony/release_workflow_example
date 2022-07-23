@@ -5,8 +5,7 @@ package com.jba.release.bdd.stepdefs;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.springframework.util.StringUtils;
-
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -24,10 +23,6 @@ import lombok.extern.slf4j.Slf4j;
 @CucumberContextConfiguration
 public class CucumberStepDef {
 
-	private static final String RELEASE_HEALTH = "/release/health";
-
-	private static final String BASE_URL = "http://20.81.93.165/api/v1";
-
 	private static Response response;
 
 	@Given("user wants to call health check api")
@@ -36,14 +31,23 @@ public class CucumberStepDef {
 
 	@When("^user call health check api with the url \"([^\\\"]*)\"$")
 	public void call_health_check_api(String url) {
-		RestAssured.baseURI = StringUtils.hasLength(url) ? url : BASE_URL;
 		RequestSpecification request = RestAssured.given();
-		response = request.get(RELEASE_HEALTH);
+		response = request.get(url);
 	}
 
-	@Then("return result")
-	public void return_result() {
+    @Then("user should get a response with status code {string}")
+    public void user_should_get_a_response_with_status_code(String statusCode) {
 		log.info("Response {}", response.getStatusCode());
-		assertEquals(200, response.getStatusCode());
+		assertEquals(Integer.parseInt(statusCode), response.getStatusCode());
 	}
+
+    @And("user should get a response with status {string}")
+    public void user_should_get_a_response_with_status(String s) {
+        log.info("Response {}", s);
+    }
+
+    
+    
+
+	
 }

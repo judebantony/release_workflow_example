@@ -36,15 +36,11 @@ public class SeleniumStepDef {
 			+ HUB_CLOUD_LAMADATEST_COM_WD_HUB;
 
 
-	private static final String SWAGGER_URL = "http://20.81.93.165/swagger-ui.html";
+	private static final String SWAGGER_URL = "www.google.com";
 
-	@Given("user wants to check Swagger UI")
-	public void wants_to_check_Swagger_UI() {
-	}
-
-	@When("^user wants to check ui for tool \"([^\\\"]*)\"$")
-	public void call_swagger_ui(String tool) {
-
+    @Then("user goes to google search using {string}")
+    public void user_goes_to_google_search_using(String tool) {
+        log.info("Response {}", tool);
 		DesiredCapabilities caps = new DesiredCapabilities();
 		if (LAMDA_TEST.equalsIgnoreCase(tool)) {
 			caps.setCapability("platform", "Windows 10");
@@ -68,9 +64,21 @@ public class SeleniumStepDef {
 				log.error("{}",e);
 			}
 		} 
-	}
 
-	@Then("return ui")
-	public void return_ui() {
-	}
+    }
+
+	@Then("user should see google search")
+    public void user_should_see_google_search() {
+        // Write code here that turns the phrase above into concrete actions
+    }
+
+ 
+    @Given("user wants to check google search")
+    public void user_wants_to_check_google_search() {
+        // Write code here that turns the phrase above into concrete actions
+    }
+
+
+
+
 }
