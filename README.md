@@ -67,13 +67,14 @@ This sample projet is to demostrate DevX by using an integrated IDE for a featur
 An integrated development environment is a software application that provides comprehensive facilities to computer programmers for software development. An IDE normally consists of at least a source code editor, build automation tools and a debugger. We are using [Gitpod](https://gitpod.io/), [CodeSpaces](https://github.com/features/codespaces) & [VSCode](https://code.visualstudio.com) as an integrated development environment. We are using [CoPilot](https://github.com/features/copilot) for AI based code completion.
 
 * [CodeSpaces](https://github.com/features/codespaces)
-    * fast cloud developer environments Visual Studio Code backed by high performance VMs that start in seconds.
+    * CodeSpaces is a cloud-based IDE that is backed by high performance VMs that start in seconds..
 * [VSCode](https://code.visualstudio.com)
 * [Gitpod](https://gitpod.io/)
     * Spin up fresh, automated dev environments for each task, in the cloud, in seconds.
 * [CoPilot](https://github.com/features/copilot)
     * GitHub Copilot uses the OpenAI Codex to suggest code and entire functions in real-time, right from your editor. 
 
+CoPilot is a powerful AI-powered code completion engine that can be used to provide code completion suggestions for any language. It is a powerful tool that can be used to help you write better code, and it is a great way to learn new languages.
 ![copilot](./doc/copilot.png)
 ## Plugins ##
 plugins provide productivity-boosting capabilities within your favorite Integrated Development Environments (IDEs).
@@ -97,6 +98,9 @@ Some of the pligins used are listed below.
 ## Linting ##
 
 Lint, or a linter, is a static code analysis tool used to flag programming errors, bugs, stylistic errors and suspicious constructs. We are using [SonarLint](https://marketplace.visualstudio.com/items?itemName=SonarSource.sonarlint-vscode),[BlackDuckLint](https://sig-docs.synopsys.com/codesight/topics/installation_guides/vscode/c_code_sight_vscode_ig_welcome.html) as a linter. It is a code analysis tool that analyzes code for errors, smells, and other problems. It is integrated with the IDE to detect changes in the code.
+
+![sonarlint](./doc/sonarlint.png)
+![gitlint](./doc/gitlint.png)
 
 ## Jira and Github Integration - (Planning,Requirement & Test Execution) ##
 
