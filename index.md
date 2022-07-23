@@ -156,11 +156,11 @@ Create Jira task and assigne to the devloper for development using [VSCode](http
 * Commit the changes and push to the remote repository.
 ![commitingcode](./doc/commitingcode.png)
 
-* Once the code is committed, build the code using [GitHub Action](https://github.com/features/actions). Github Action log can be found in the IDE. The plugin used for this is [GitHub Action](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-github-action).
+* Once the code is committed, build the code using [GitHub Action](https://github.com/features/actions). Github Action log can be found in the IDE. The plugin used for this is [GitHub Action plugin](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-github-action).
 
 ![githubactionlogs](./doc/githubactionlogs.png)
 ![githubbuild](./doc/githubbuild.png)
-If you want to update any github action configuration then you can do it using [VSCode](https://code.visualstudio.com) [GitHub Action](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-github-action).
+If you want to update any github action configuration then you can do it using [VSCode](https://code.visualstudio.com) [GitHub Action plugin](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-github-action).
 ![updategithubaction](./doc/updategithubaction.png)
 
 * Run the unit tests and capture the result in Jira using Xray.

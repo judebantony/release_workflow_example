@@ -185,7 +185,8 @@ Test results will be uploaded back to Jira to provide [Requirement Traceability 
 
 * Once the pull request is created, we can merge the pull request to the main branch. Merge can be done using [VSCode](https://code.visualstudio.com) [GitHub plugin](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-github).
 ![managepullrequest](./doc/managepullrequest.png)
-
+![unittestresult](./doc/unittestresult.png)
+![unittestcoverage](./doc/unittestcoverage.png)
 
 
 
