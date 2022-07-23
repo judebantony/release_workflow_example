@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch E2EReleaseGitHubActionApplication",
+            "request": "launch",
+            "mainClass": "com.jba.release.E2EReleaseGitHubActionApplication",
+            "projectName": "release_workflow_example_f929e58b"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-E2EReleaseGitHubActionApplication<releasegithubaction>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.jba.release.E2EReleaseGitHubActionApplication",
+            "projectName": "releasegithubaction",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
