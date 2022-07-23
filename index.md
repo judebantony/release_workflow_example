@@ -1,4 +1,4 @@
-# DevX Cloud-base IDE and GitHub Action
+# DevX Cloud-Based IDE and GitHub Action
 
 This sample projet is to demostrate DevX by using an integrated cloud-based IDE for feature delopment and e2e SDLC release workflow process.
 
