@@ -1,4 +1,5 @@
-# DevX Cloud-Based IDE and GitHub Action
+
+# DevX - Cloud-Based IDE and GitHub Action
 
 This sample projet is to demostrate DevX by using an integrated cloud-based IDE for feature delopment and e2e SDLC release workflow process.
 
@@ -60,6 +61,7 @@ An integrated development environment is a software application that provides co
 * [CodeSpaces](https://github.com/features/codespaces)
     * CodeSpaces is a cloud-based IDE that is backed by high performance VMs that start in seconds..
 * [VSCode](https://code.visualstudio.com)
+    * VSCode is a free and open-source software development platform that is built upon the Microsoft Visual Studio code editor.
 * [Gitpod](https://gitpod.io/)
     * Spin up fresh, automated dev environments for each task, in the cloud, in seconds.
 * [CoPilot](https://github.com/features/copilot)
@@ -67,6 +69,10 @@ An integrated development environment is a software application that provides co
 
 CoPilot is a powerful AI-powered code completion engine that can be used to provide code completion suggestions for any language. It is a powerful tool that can be used to help you write better code, and it is a great way to learn new languages.
 ![copilot](./doc/copilot.png)
+
+Using [Gitpod](https://gitpod.io/), we are able to spin up a fresh dev environment for each task, in the cloud and will be able to open it in browser as well.
+![gitpod](./doc/gitpod.png)
+
 ## Plugins ##
 Plugins provide productivity-boosting capabilities within your favorite Integrated Development Environments (IDEs).
 VSCode plugins are available in the [marketplace](https://marketplace.visualstudio.com/vscode).
@@ -129,18 +135,19 @@ Test results will be uploaded back to Jira to provide [Requirement Traceability 
 ![githubtest](./doc/githubtestrun.png)
 ![githubresult](./doc/githubresult.png)
 
-## Start the development by cloning the repository ##
+## Feture Development ##
+## 1. Cloning the repository ##
 
 Clone the repository using [VSCode](https://code.visualstudio.com) [GitHub plugin](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-github).
 ![clonetherepo](./doc/clonetherepo.png)
 ![selecttherepoforcloning](./doc/selecttherepoforcloning.png)
 
-## Create a Jira Tasks ##
+## 2. Create a Jira Tasks ##
 
 Create Jira task and assigne to the devloper for development using [VSCode](https://code.visualstudio.com) [Jira plugin](https://marketplace.visualstudio.com/items?itemName=Atlassian.atlascode).
 ![create_jira_issue](./doc/create_jira_issue.png)
 
-## Start working on it ##
+## 3. Start working on the task ##
 
 * Start working on the Jira task by create feature branch using [VSCode](https://code.visualstudio.com) [Jira plugin](https://marketplace.visualstudio.com/items?itemName=Atlassian.atlascode).
 ![startwork](./doc/startwork.png)
@@ -174,11 +181,15 @@ Test results will be uploaded back to Jira to provide [Requirement Traceability 
 ![createpullrequest](./doc/createpullrequest.png)
 ![createdpullrequestgit](./doc/createdpullrequestgit.png)
 
-* Once the pull request is created, we can merge the pull request to the main branch. Merge can be done using [VSCode](https://code.visualstudio.com) [GitHub plugin](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-github).
+* Merge the pull request to the main branch after the peer review. Merge can be done using [VSCode](https://code.visualstudio.com) [GitHub plugin](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-github).
 ![managepullrequest](./doc/managepullrequest.png)
 ![unittestresult](./doc/unittestresult.png)
 ![unittestcoverage](./doc/unittestcoverage.png)
 
+
+## Continuous Integration ##
+
+## Release ##
 
 
 
