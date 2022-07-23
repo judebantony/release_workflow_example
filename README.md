@@ -77,7 +77,7 @@ An integrated development environment is a software application that provides co
 CoPilot is a powerful AI-powered code completion engine that can be used to provide code completion suggestions for any language. It is a powerful tool that can be used to help you write better code, and it is a great way to learn new languages.
 ![copilot](./doc/copilot.png)
 ## Plugins ##
-plugins provide productivity-boosting capabilities within your favorite Integrated Development Environments (IDEs).
+Plugins provide productivity-boosting capabilities within your favorite Integrated Development Environments (IDEs).
 VSCode plugins are available in the [marketplace](https://marketplace.visualstudio.com/vscode).
 Some of the pligins used are listed below.
 
