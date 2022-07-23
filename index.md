@@ -1,7 +1,6 @@
-# DevX & E2E release workflow
-# DevX & E2E Release Workflow using GitHub Action and SaaS Tools
+# DevX Cloud-base IDE and GitHub Action
 
-This sample projet is to demostrate DevX by using an integrated IDE for a feature delopment and e2e SDLC release workflow process.
+This sample projet is to demostrate DevX by using an integrated cloud-based IDE for feature delopment and e2e SDLC release workflow process.
 
 #### Tools used are listed below ####
 
@@ -156,11 +155,11 @@ Create Jira task and assigne to the devloper for development using [VSCode](http
 * Commit the changes and push to the remote repository.
 ![commitingcode](./doc/commitingcode.png)
 
-* Once the code is committed, build the code using [GitHub Action](https://github.com/features/actions). Github Action log can be found in the IDE. The plugin used for this is [GitHub Action plugin](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-github-action).
+* Once the code is committed, build the code using [GitHub Action](https://github.com/features/actions). Github Action log can be found in the IDE. The plugin used for this is [GitHub Action](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-github-action).
 
 ![githubactionlogs](./doc/githubactionlogs.png)
 ![githubbuild](./doc/githubbuild.png)
-If you want to update any github action configuration then you can do it using [VSCode](https://code.visualstudio.com) [GitHub Action plugin](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-github-action).
+If you want to update any github action configuration then you can do it using [VSCode](https://code.visualstudio.com) [GitHub Action](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-github-action).
 ![updategithubaction](./doc/updategithubaction.png)
 
 * Run the unit tests and capture the result in Jira using Xray.
@@ -177,7 +176,8 @@ Test results will be uploaded back to Jira to provide [Requirement Traceability 
 
 * Once the pull request is created, we can merge the pull request to the main branch. Merge can be done using [VSCode](https://code.visualstudio.com) [GitHub plugin](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-github).
 ![managepullrequest](./doc/managepullrequest.png)
-
+![unittestresult](./doc/unittestresult.png)
+![unittestcoverage](./doc/unittestcoverage.png)
 
 
 
