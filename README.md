@@ -7,9 +7,9 @@
 
 
 
-# DevX & E2E Release Workflow using GitHub Action and SaaS Tools
+# DevX Cloud-base IDE and GitHub Action
 
-This sample projet is to demostrate DevX by using an integrated IDE for a feature delopment and e2e SDLC release workflow process.
+This sample projet is to demostrate DevX by using an integrated cloud-based IDE for feature delopment and e2e SDLC release workflow process.
 
 #### Tools used are listed below ####
 
