@@ -195,6 +195,9 @@ Integration & Implementation of E2E CI/CD release workflow using [Github Action]
 
 [Supply chain Levels for Software Artifacts, or SLSA (salsa)](https://slsa.dev) a security framework, a check-list of standards and controls to prevent tampering, improve integrity, and secure packages and infrastructure in your projects, businesses or enterprises. It’s how you get from safe enough to being as resilient as possible, at any link in the chain.
 
+E2E github action workflow, we implimented has got combination of CI/CD and SLSA.
+![githubactionworkflow](./doc/githubactionworkflow.png)
+
 ### 1. Maven - Build and Unit Test ###
 
 [Apache Maven](https://maven.apache.org) is a software project management and comprehension tool. Based on the concept of a project object model (POM), Maven can manage a project's build, reporting and documentation from a central piece of information.
@@ -666,13 +669,15 @@ The version should be assigned to the ticket while changing the status into “A
 
 ![sprintboard](./doc/sprintboard.png)
 ### 3. Tracking releases ###
-The release may contain the tasks with different statuses (e.g. “In progress”, “Reopened” or even “Closed”). JIRA will not allow you to release the version until the team complete al the tasks or remove the task from the current release.
+The release may contain the tasks with different statuses (e.g. “In progress”, “Reopened” or even “Closed”). JIRA will not allow you to release the version until the team complete all the tasks or remove the task from the current release.
 The “release” branch should contain all the required features to be delivered under the current release. All the tasks on the Scrum board should be in “Closed” status.
 ![release](./doc/release.png)
 If there is any warning or error will be shown in this tab.
 ![warning](./doc/warning.png)
 Warning or error can we configured using this tab. 
 ![managewarning](./doc/managewarning.png)
+
+Capture all necessary evidences including [Testing reports - Jira Xray](https://marketplace.atlassian.com/apps/1211769/xray-test-management-for-jira?tab=overview&hosting=cloud), Security reports, [Code coverage reports](https://marketplace.atlassian.com/apps/1217471/sonarqube-connector-for-jira?tab=overview&hosting=cloud), etc. in the Jira release page.
 
 To release the version in JIRA you can simply click on “Release” button and set up the release date.
 ### 4. Reporting releases ###
