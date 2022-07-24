@@ -9,7 +9,7 @@
 
 # DevX - Cloud-Based IDE and GitHub Action
 
-This sample projet is to demostrate DevX by using an integrated cloud-based IDE for feature delopment and e2e SDLC release workflow process.
+This sample projet is to demostrate DevX - using an integrated cloud-based IDE for feature development and E2E SDLC release process.
 
 #### Tools used are listed below ####
 
@@ -52,7 +52,7 @@ This sample projet is to demostrate DevX by using an integrated cloud-based IDE 
 
 ## IDE ##
 
-An integrated development environment is a software application that provides comprehensive facilities to computer programmers for software development. An IDE normally consists of at least a source code editor, build automation tools and a debugger. We are using [Gitpod](https://gitpod.io/), [CodeSpaces](https://github.com/features/codespaces) & [VSCode](https://code.visualstudio.com) as an integrated development environment. We are using [CoPilot](https://github.com/features/copilot) for AI based code completion.
+An integrated development environment is a software application that provides comprehensive facilities to computer programmers for software development. An IDE normally consists of at least a source code editor, build automation tools and a debugger. Here we use [Gitpod](https://gitpod.io/), [CodeSpaces](https://github.com/features/codespaces) & [VSCode](https://code.visualstudio.com) as an integrated development environment and [CoPilot](https://github.com/features/copilot) for AI based code completion.
 
 * [CodeSpaces](https://github.com/features/codespaces)
     * CodeSpaces is a cloud-based IDE that is backed by high performance VMs that start in seconds..
@@ -63,10 +63,10 @@ An integrated development environment is a software application that provides co
 * [CoPilot](https://github.com/features/copilot)
     * GitHub Copilot uses the OpenAI Codex to suggest code and entire functions in real-time, right from your editor. 
 
-CoPilot is a powerful AI-powered code completion engine that can be used to provide code completion suggestions for any language. It is a powerful tool that can be used to help you write better code, and it is a great way to learn new languages. As you can see it in the below image, CoPilot provides code completion suggestions for the language of your choice.
+CoPilot is a powerful AI-powered code completion engine that can be used to provide code completion suggestions for any language. It is a powerful tool which helps you write better code, and it is a great way to learn new languages. In the below image, we can see CoPilot suggest code snippet for the language of our choice.
 ![copilot](./doc/copilot.png)
 
-Using [Gitpod](https://gitpod.io/), we are able to spin up a fresh dev environment for each task, in the cloud and will be able to open the IDE in browser.
+Using [Gitpod](https://gitpod.io/), we are able to spin up a fresh dev environment for each task, in the cloud and will be able to open the IDE in the browser.
 ![gitpod](./doc/gitpod.png)
 
 ## Plugins ##
@@ -75,7 +75,7 @@ VSCode plugins are available in the [marketplace](https://marketplace.visualstud
 Some of the pligins used are listed below.
 
 * [GitHub Actions](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-github-actions)
-* [CodeSpace](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-codespace)
+* [CodeSpaces](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-codespace)
 * [CoPilot](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-copilot)
 * [GitHub](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-github)
 * [GitHub Package](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-github-package)
@@ -90,11 +90,12 @@ Some of the pligins used are listed below.
 
 ## Linting ##
 
-Lint, or a linter, is a static code analysis tool used to flag programming errors, bugs, stylistic errors and suspicious constructs. We are using [SonarLint](https://marketplace.visualstudio.com/items?itemName=SonarSource.sonarlint-vscode),[BlackDuckLint](https://sig-docs.synopsys.com/codesight/topics/installation_guides/vscode/c_code_sight_vscode_ig_welcome.html) as a linter. It is a code analysis tool that analyzes code for errors, smells, and other problems. It is integrated with the IDE to detect changes in the code.
+Lint, or a linter, is a static code analysis tool used to flag programming errors, bugs, stylistic errors and suspicious constructs. We use [SonarLint](https://marketplace.visualstudio.com/items?itemName=SonarSource.sonarlint-vscode), [BlackDuckLint](https://sig-docs.synopsys.com/codesight/topics/installation_guides/vscode/c_code_sight_vscode_ig_welcome.html) as a linter. It is a code analysis tool that analyzes code for errors, smells, and other problems. It is integrated with the IDE to detect changes in the code.
 
-This guarantees development team to “[shift left](https://www.devsecops.org/blog/2016/5/20/-security)” application security at the earliest stages in the development lifecycle, as part of DevSecOps (collaboration between development, security, and operations). To shift left means to move a process to the left on the traditional linear depiction of the software development lifecycle (SDLC). There are two common subjects of shift left initiatives in DevOps: security and testing.
-
+This guarantees development team to “[shift left](https://www.devsecops.org/blog/2016/5/20/-security)” application security at the earliest stages in the development lifecycle, as part of DevSecOps (collaboration between development, security, and operations). To shift left means to move a process to the left on the traditional linear depiction of the software development lifecycle (SDLC). There are two common subjects of shift left initiatives in DevSecOps (security and testing).
+SonarLint is a linter that is integrated with the IDE to detect code quality.
 ![sonarlint](./doc/sonarlint.png)
+GitLint is a linter that is integrated with the IDE to detect changes in the code.
 ![gitlint](./doc/gitlint.png)
 
 ## Jira and Github Integration - (Planning,Requirement & Test Execution) ##
