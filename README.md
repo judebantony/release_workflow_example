@@ -195,6 +195,9 @@ Integration & Implementation of E2E CI/CD release workflow using [Github Action]
 
 [Supply chain Levels for Software Artifacts, or SLSA (salsa)](https://slsa.dev) a security framework, a check-list of standards and controls to prevent tampering, improve integrity, and secure packages and infrastructure in your projects, businesses or enterprises. It’s how you get from safe enough to being as resilient as possible, at any link in the chain.
 
+E2E github action workflow is a combination of CI/CD and SLSA.
+![githubactionworkflow](./doc/githubactionworkflow.png)
+
 ### 1. Maven - Build and Unit Test ###
 
 [Apache Maven](https://maven.apache.org) is a software project management and comprehension tool. Based on the concept of a project object model (POM), Maven can manage a project's build, reporting and documentation from a central piece of information.
