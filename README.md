@@ -63,10 +63,10 @@ An integrated development environment is a software application that provides co
 * [CoPilot](https://github.com/features/copilot)
     * GitHub Copilot uses the OpenAI Codex to suggest code and entire functions in real-time, right from your editor. 
 
-CoPilot is a powerful AI-powered code completion engine that can be used to provide code completion suggestions for any language. It is a powerful tool that can be used to help you write better code, and it is a great way to learn new languages.
+CoPilot is a powerful AI-powered code completion engine that can be used to provide code completion suggestions for any language. It is a powerful tool that can be used to help you write better code, and it is a great way to learn new languages. As you can see it in the below image, CoPilot provides code completion suggestions for the language of your choice.
 ![copilot](./doc/copilot.png)
 
-Using [Gitpod](https://gitpod.io/), we are able to spin up a fresh dev environment for each task, in the cloud and will be able to open it in browser as well.
+Using [Gitpod](https://gitpod.io/), we are able to spin up a fresh dev environment for each task, in the cloud and will be able to open the IDE in browser.
 ![gitpod](./doc/gitpod.png)
 
 ## Plugins ##
@@ -91,6 +91,8 @@ Some of the pligins used are listed below.
 ## Linting ##
 
 Lint, or a linter, is a static code analysis tool used to flag programming errors, bugs, stylistic errors and suspicious constructs. We are using [SonarLint](https://marketplace.visualstudio.com/items?itemName=SonarSource.sonarlint-vscode),[BlackDuckLint](https://sig-docs.synopsys.com/codesight/topics/installation_guides/vscode/c_code_sight_vscode_ig_welcome.html) as a linter. It is a code analysis tool that analyzes code for errors, smells, and other problems. It is integrated with the IDE to detect changes in the code.
+
+This guarantees development team to “[shift left](https://www.devsecops.org/blog/2016/5/20/-security)” application security at the earliest stages in the development lifecycle, as part of DevSecOps (collaboration between development, security, and operations). To shift left means to move a process to the left on the traditional linear depiction of the software development lifecycle (SDLC). There are two common subjects of shift left initiatives in DevOps: security and testing.
 
 ![sonarlint](./doc/sonarlint.png)
 ![gitlint](./doc/gitlint.png)
@@ -131,7 +133,10 @@ Test results will be uploaded back to Jira to provide [Requirement Traceability 
 ![githubtest](./doc/githubtestrun.png)
 ![githubresult](./doc/githubresult.png)
 
-## Feture Development ##
+## Feature-Driven Development ##
+
+Feature-driven development is an iterative and incremental software development process. It is a lightweight or Agile method for developing software. FDD blends a number of industry-recognized best practices into a cohesive whole. These practices are driven from a client-valued functionality perspective.
+
 ## 1. Cloning the repository ##
 
 Clone the repository using [VSCode](https://code.visualstudio.com) [GitHub plugin](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-github).
@@ -183,9 +188,11 @@ Test results will be uploaded back to Jira to provide [Requirement Traceability 
 ![unittestcoverage](./doc/unittestcoverage.png)
 
 
-## Continuous Integration ##
+## Continuous Integration & SLSA ##
 
 Integration & Implementation of E2E CI/CD release workflow using [Github Action](https://github.com/features/actions), this has been achieved using different Cloud SaaS tools listed below.
+
+[Supply chain Levels for Software Artifacts, or SLSA (salsa)](https://slsa.dev) a security framework, a check-list of standards and controls to prevent tampering, improve integrity, and secure packages and infrastructure in your projects, businesses or enterprises. It’s how you get from safe enough to being as resilient as possible, at any link in the chain.
 
 ### 1. Maven - Build and Unit Test ###
 
@@ -218,7 +225,7 @@ The test coverage result, which is aggregated by [Jacoco](https://www.baeldung.c
       - name: Build
         run: mvn -B clean package -DskipTests
       - name: Run UnitTest and Verify 
-        run: mvn -B verify -DexcludedGroups="Smoke | Staging | BrowserStack | LamdaTest"
+        run: mvn -B verify -DexcludedGroups="Smoke | LamdaTest"
       - name: Generate JaCoCo Badge
         id: jacoco
         uses: cicirello/jacoco-badge-generator@v2
@@ -280,7 +287,7 @@ Results are uploaded to [SonarQube](https://www.sonarqube.org) Cloud SaaS offeri
 
 ```yaml
   sonar:
-    name: Inspect - Using Sonar
+    name: Inspect & Quality Gate check - Using Sonar
     runs-on: ubuntu-latest
     needs: [test]
     
@@ -309,7 +316,7 @@ Results are uploaded to [SonarQube](https://www.sonarqube.org) Cloud SaaS offeri
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn -B verify -DexcludedGroups="Smoke | Staging | LamdaTest | BrowserStack" org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.issuesReport.html.enable=true -Dsonar.projectKey=judebantony_cicd-github-action-example
+        run: mvn -B verify -DexcludedGroups="Smoke | LamdaTest" org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.issuesReport.html.enable=true -Dsonar.projectKey=judebantony_release_workflow_example
       - name: SonarQube Quality Gate check
         uses: sonarsource/sonarqube-quality-gate-action@master
         env:
@@ -317,7 +324,7 @@ Results are uploaded to [SonarQube](https://www.sonarqube.org) Cloud SaaS offeri
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}   
         timeout-minutes: 5     
         with:
-          scanMetadataReportFile: target/sonar/report-task.txt     
+          scanMetadataReportFile: target/sonar/report-task.txt  
 
 ```
 
@@ -325,7 +332,7 @@ In [pom.xml](https://github.com/judebantony/release_workflow_example/tree/main/p
 
 ```xml
   <sonar.organization>judebantony</sonar.organization>
-  <sonar.projectKey>cicd-github-action-example</sonar.projectKey>
+  <sonar.projectKey>release_workflow_example</sonar.projectKey>
   <sonar.host.url>https://sonarcloud.io</sonar.host.url>
 
 ```
@@ -345,7 +352,7 @@ Use the native Github Action [CodeQL](https://codeql.github.com) for SAST scan a
   codeqlScan:
       name: SAST Scan using CodeQL
       runs-on: ubuntu-latest
-      needs: [sonar, codecov]
+      needs: [sonar]
       
       permissions:
         actions: read
@@ -406,10 +413,10 @@ Use [Trufflehog](https://trufflesecurity.com/trufflehog) to find any secrets pre
 
 ```yaml
 
-  trufflehogScan:
+ trufflehogScan:
       name: Secret Scan Using Trufflehog
       runs-on: ubuntu-latest
-      needs: [dependabot, snykScan, blackduck, fossaScan]
+      needs: [codeqlScan]
       
       steps:
         - name: Check out the code
@@ -419,11 +426,52 @@ Use [Trufflehog](https://trufflesecurity.com/trufflehog) to find any secrets pre
         - name: trufflehog-actions-scan
           uses: edplato/trufflehog-actions-scan@master
           with:
-            scanArguments: "--regex --entropy=False --max_depth=5" 
-
-
+            scanArguments: "--regex --entropy=False --max_depth=5"   
 ```
-### 6. GitHub Package - Publish Artifact(jar) ###
+### 6. Generate SLSA provenance & SBOM ###
+
+[SBOM, or a Software Bill of Materials](https://slsa.dev/blog/2022/05/slsa-sbom). Acting as an “ingredient” label for software, SBOMs are documents that provide a nested list of packages and components included in a piece of software. SBOMs are well positioned to help consumers better manage the risks of the software they consume and to respond more easily to vulnerabilities.
+
+[SLSA (Supply-chain Levels for Software Artifacts)](https://slsa.dev/blog/2022/05/slsa-sbom), a framework for creating a secure software supply chain, can address each of these potential areas for improvement when used in conjunction with SBOMs. This blog post explains the strengths of SBOMs and SLSA and how they fundamentally differ, and shows how SLSA principles can both support the generation of high-quality SBOMs and help consumers respond to supply chain attacks.
+
+```yaml
+
+ slsa:
+    name: Generate SLSA provenance
+    runs-on: ubuntu-latest
+    needs: [trufflehogScan]
+
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v1
+        with:
+          fetch-depth: 0
+      - name: Set up JDK
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+      - name: Cache Maven packages
+        uses: actions/cache@v1
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-m2     
+      - name: Build
+        run: mvn -B clean package -DskipTests
+      - name: Run UnitTest and Verify 
+        run: mvn -B verify -DexcludedGroups="Smoke | LamdaTest"
+      - name: Upload provenance
+        uses: actions/upload-artifact@v2
+        with:
+          name: slsa-provenance
+          path: build.provenance
+      - uses: anchore/sbom-action@v0
+        with:
+          artifact-name: sbom.spdx.json
+          format: spdx-json
+          path: target 
+```
+### 7. GitHub Package - Publish Artifact(jar) ###
 
 [Github Packages](https://docs.github.com/en/packages/learn-github-packages/introduction-to-github-packages) is a software package hosting service that allows you to host your software packages privately or publicly and use packages as dependencies in your projects.
 
@@ -434,7 +482,8 @@ Publish the Jar to [Github Packages](https://docs.github.com/en/packages/learn-g
  gitHubPakageArtifactPush:
     name: Publish Artifact to GitHub Package
     runs-on: ubuntu-latest 
-    needs: [snyIaSScan, trufflehogScan] 
+    needs: [slsa] 
+    
     permissions: 
       contents: read
       packages: write 
@@ -457,19 +506,19 @@ Publish the Jar to [Github Packages](https://docs.github.com/en/packages/learn-g
       - name: Publish package
         run: mvn --batch-mode deploy -DskipTests
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}   
 
 
 ```
 
-In [pom.xml](https://github.com/judebantony/cicd-github-action-example/tree/main/pom.xml), we need to add the below configuration.
+In [pom.xml](https://github.com/judebantony/release_workflow_example/tree/main/pom.xml), we need to add the below configuration.
 
 ```xml
  <distributionManagement>
   <repository>
    <id>github</id>
    <name>GitHub Packages</name>
-   <url>https://maven.pkg.github.com/judebantony/cicd-github-action-example</url>
+   <url>https://maven.pkg.github.com/judebantony/release_workflow_example</url>
   </repository>
  </distributionManagement>
 
@@ -478,7 +527,7 @@ In [pom.xml](https://github.com/judebantony/cicd-github-action-example/tree/main
 GitHub Package UI:-
 ![githubpackage](./doc/githubpackage.png)
 
-### 7. Functional Test using Xray and Jira ###
+### 8. Functional Test using Xray and Jira ###
 
 [XRay](https://www.getxray.app) is a Test Management tool integrated with Jira. Built for every member of your team to plan, test, track and release great software · Manage all your tests as Jira issues.
 
@@ -521,7 +570,7 @@ Xray Jira plugin is used to create the test case in [Gherkin](https://cucumber.i
       - name: Build
         run: mvn -B clean package -DskipTests
       - name: Run UnitTest and Verify 
-        run: mvn -B verify -DexcludedGroups="Smoke | Staging | BrowserStack | LamdaTest"
+        run: mvn -B verify -DexcludedGroups="Smoke | LamdaTest"
       - name: Generate JaCoCo Badge
         id: jacoco
         uses: cicirello/jacoco-badge-generator@v2
@@ -538,7 +587,7 @@ Xray Jira plugin is used to create the test case in [Gherkin](https://cucumber.i
 
 Jira Xray test execution dashboard:-
 ![xray](./doc/xray.png)
-### 8. Release Tag Creation ###
+### 9. Release Tag Creation ###
 
 Create a release tag for the branch.
 
@@ -547,7 +596,7 @@ Create a release tag for the branch.
   releaseTag:
       name: Release Tag & Note Creation 
       runs-on: ubuntu-latest
-      needs: [k6_cloud_test]
+      needs: [gitHubPakageArtifactPush]
       steps:
         - name: Checkout
           uses: actions/checkout@v2
