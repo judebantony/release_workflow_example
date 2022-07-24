@@ -476,8 +476,8 @@ Use [Trufflehog](https://trufflesecurity.com/trufflehog) to find any secrets pre
           path: target
 ```
 
-Sample SBOM:- ![sbom](./doc/sbom.spdx.json)
-Smaple SLSA Provenance:- ![slsa](./doc/buid.provenance)
+Sample SBOM:- [sbom](https://github.com/judebantony/release_workflow_example/tree/main/doc/sbom.spdx.json)
+Smaple SLSA Provenance:- [slsa](https://github.com/judebantony/release_workflow_example/tree/main/doc/buid.provenance)
 ### 7. GitHub Package - Publish Artifact(jar) ###
 
 [Github Packages](https://docs.github.com/en/packages/learn-github-packages/introduction-to-github-packages) is a software package hosting service that allows you to host your software packages privately or publicly and use packages as dependencies in your projects.

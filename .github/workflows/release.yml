@@ -112,13 +112,13 @@ jobs:
         with:
            fetch-depth: 0
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@v1
+        uses: github/codeql-action/init@v2
         with:
           languages: ${{ matrix.language }}
       - name: Autobuild
-        uses: github/codeql-action/autobuild@v1
+        uses: github/codeql-action/autobuild@v2
       - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v1
+        uses: github/codeql-action/analyze@v2
 
   trufflehogScan:
       name: Secret Scan Using Trufflehog
@@ -218,7 +218,6 @@ jobs:
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             WITH_V: true
-      
         - name: Create Release
           uses: actions/create-release@v1
           with:
