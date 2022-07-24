@@ -630,26 +630,48 @@ Release Tag:-
 ![releasetag](./doc/releasetag.png)
 
 
-## Release ##
+## Release Management ##
+
+According to Wikipedia, release management is the process of managing, planning, scheduling and controlling a software build through different stages and environments; it includes testing and deploying software releases. It ensures that release teams efficiently deliver the applications and upgrades required by the business while maintaining the integrity of the existing production environment.
+
+Release management flow using [JIRA](https://community.atlassian.com/t5/Marketplace-Apps-Integrations/Release-Management-is-the-next-big-thing-for-Atlassian-Jira/ba-p/1348276) and Confluence consists of several steps:
 
 
+### 1. Create a version for the next release ###
 
+Create a version in JIRA using the [Semantic Versioning 2.0.0](https://semver.org) 
 
+Given a version number MAJOR.MINOR.PATCH, increment the:
 
+MAJOR version when you make incompatible API changes
+MINOR version when you add functionality in a backwards compatible manner
+PATCH version when you make backwards compatible bug fixes
+Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
 
+![createversion](./doc/createversion.png)
+![versionpanal](./doc/versionpanal.png)
 
+### 2. Assigning the tasks to the versions ###
 
+We use Sprint board with various statuses columns to move the ticket throughout its lifecycle.
+The version should be assigned to the ticket while changing the status into “Awaiting release” on Sprint board. It means that the feature was well-tested, merged to “release” branch and is waiting to be released (deployed to the needed non-prod environment).
 
+![sprintboard](./doc/sprintboard.png)
+### 3. Tracking releases ###
+The release may contain the tasks with different statuses (e.g. “In progress”, “Reopened” or even “Closed”). JIRA will not allow you to release the version until the team complete al the tasks or remove the task from the current release.
+The “release” branch should contain all the required features to be delivered under the current release. All the tasks on the Scrum board should be in “Closed” status.
+![release](./doc/release.png)
+If there is any warning or error will be shown in this tab.
+![warning](./doc/warning.png)
+Warning or error can we configured using this tab. 
+![managewarning](./doc/managewarning.png)
 
+To release the version in JIRA you can simply click on “Release” button and set up the release date.
+### 4. Reporting releases ###
 
+Release not can be reported using the [Release Management Report](https://confluence.xpand-it.com/display/JIRA/Release+Management+Report) plugin.
 
-
-
-
-
-
-
-
+![jirareleasenote](./doc/jirareleasenote.png)
 
 
 ## Author
