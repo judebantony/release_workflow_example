@@ -1,9 +1,9 @@
-# DevX & E2E release workflow
+# DevX & E2E Release Management
 
 
-# DevX - Cloud-Based IDE and GitHub Action
+# DevX - Cloud-Based IDE, JIRA and GitHub Action
 
-This sample projet is to demostrate DevX - using an integrated cloud-based IDE for feature development and E2E SDLC release process.
+This sample projet is to demostrate DevX - using an integrated cloud-based IDE for feature development, GitHub Action for CI/CD and JIRA for E2E Release Management.
 
 #### Tools used are listed below ####
 
@@ -42,7 +42,11 @@ This sample projet is to demostrate DevX - using an integrated cloud-based IDE f
   * [LamdaTest](https://www.lambdatest.com)
 * Test Management
   * [Xray & Jira for Test Execution](https://docs.getxray.app/display/XRAY/About+Xray)
-* Create Release Note & Tag
+* CI/CD
+  * [GitHub Actions](https://github.com/features/actions)  
+* Release Management
+  * [Jira](https://judebantony.atlassian.net)
+  * [GitHub Action](https://github.com/features/actions)
 
 ## IDE ##
 
