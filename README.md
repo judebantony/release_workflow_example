@@ -436,7 +436,7 @@ Use [Trufflehog](https://trufflesecurity.com/trufflehog) to find any secrets pre
 
 ```yaml
 
- slsa:
+   slsa:
     name: Generate SLSA provenance
     runs-on: ubuntu-latest
     needs: [trufflehogScan]
@@ -460,6 +460,10 @@ Use [Trufflehog](https://trufflesecurity.com/trufflehog) to find any secrets pre
         run: mvn -B clean package -DskipTests
       - name: Run UnitTest and Verify 
         run: mvn -B verify -DexcludedGroups="Smoke | LamdaTest"
+      - name: Generate provenance
+        uses: slsa-framework/github-actions-demo@v0.1
+        with:
+          artifact_path: target/releasegithubaction.jar      
       - name: Upload provenance
         uses: actions/upload-artifact@v2
         with:
@@ -469,8 +473,11 @@ Use [Trufflehog](https://trufflesecurity.com/trufflehog) to find any secrets pre
         with:
           artifact-name: sbom.spdx.json
           format: spdx-json
-          path: target 
+          path: target
 ```
+
+Sample SBOM:- ![sbom](./doc/sbom.spdx.json)
+Smaple SLSA Provenance:- ![slsa](./doc/buid.provenance)
 ### 7. GitHub Package - Publish Artifact(jar) ###
 
 [Github Packages](https://docs.github.com/en/packages/learn-github-packages/introduction-to-github-packages) is a software package hosting service that allows you to host your software packages privately or publicly and use packages as dependencies in your projects.
