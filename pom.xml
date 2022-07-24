@@ -20,7 +20,7 @@
 		<testcontainers.version>1.17.3</testcontainers.version>
 		<cucumber.version>7.4.1</cucumber.version>
 		<sonar.organization>judebantony</sonar.organization>
-		<sonar.projectKey>cicd-github-action-example</sonar.projectKey>
+		<sonar.projectKey>release_workflow_example</sonar.projectKey>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 		<cucumber-reporting.version>5.5.3</cucumber-reporting.version>
 	</properties>

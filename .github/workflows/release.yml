@@ -51,18 +51,114 @@ jobs:
         uses: EnricoMi/publish-unit-test-result-action/composite@v1
         with:
            files: target/surefire-reports/*.xml
-      - name: Katalon Report Uploader
-        uses: katalon-studio/report-uploader@v0.0.7.11
-        env:
-          EMAIL: ${{ secrets.KATALON_EMAIL }}
-          PASSWORD: ${{ secrets.KATALON_PWD }}
-          PROJECT_ID: 494065
-          TYPE: junit
-          REPORT_PATH: target/surefire-reports/
-      - name: Generate provenance
-        uses: slsa-framework/github-actions-demo@v0.1
+
+  sonar:
+    name: Inspect & Quality Gate check - Using Sonar
+    runs-on: ubuntu-latest
+    needs: [test]
+    
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v1
         with:
-          artifact_path: target/releasegithubaction.jar
+          fetch-depth: 0
+      - name: Set up JDK 11
+        uses: actions/setup-java@v1
+        with:
+          java-version: 11
+      - name: Cache SonarCloud packages
+        uses: actions/cache@v1
+        with:
+          path: ~/.sonar/cache
+          key: ${{ runner.os }}-sonar
+          restore-keys: ${{ runner.os }}-sonar
+      - name: Cache Maven packages
+        uses: actions/cache@v1
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-m2     
+      - name: Build and analyze
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: mvn -B verify -DexcludedGroups="Smoke | LamdaTest" org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.issuesReport.html.enable=true -Dsonar.projectKey=judebantony_release_workflow_example
+      - name: SonarQube Quality Gate check
+        uses: sonarsource/sonarqube-quality-gate-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}   
+        timeout-minutes: 5     
+        with:
+          scanMetadataReportFile: target/sonar/report-task.txt  
+
+  codeqlScan:
+      name: SAST Scan using CodeQL
+      runs-on: ubuntu-latest
+      needs: [sonar]
+      
+      permissions:
+        actions: read
+        contents: read
+        security-events: write
+      strategy:
+        fail-fast: false
+        matrix:
+          language: [ 'java' ]
+          
+      steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+           fetch-depth: 0
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v1
+        with:
+          languages: ${{ matrix.language }}
+      - name: Autobuild
+        uses: github/codeql-action/autobuild@v1
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v1
+
+  trufflehogScan:
+      name: Secret Scan Using Trufflehog
+      runs-on: ubuntu-latest
+      needs: [codeqlScan]
+      
+      steps:
+        - name: Check out the code
+          uses: actions/checkout@v2
+          with:
+            fetch-depth: 0
+        - name: trufflehog-actions-scan
+          uses: edplato/trufflehog-actions-scan@master
+          with:
+            scanArguments: "--regex --entropy=False --max_depth=5"         
+
+  slsa:
+    name: Generate SLSA provenance
+    runs-on: ubuntu-latest
+    needs: [trufflehogScan]
+
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v1
+        with:
+          fetch-depth: 0
+      - name: Set up JDK
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+      - name: Cache Maven packages
+        uses: actions/cache@v1
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-m2     
+      - name: Build
+        run: mvn -B clean package -DskipTests
+      - name: Run UnitTest and Verify 
+        run: mvn -B verify -DexcludedGroups="Smoke | LamdaTest"
       - name: Upload provenance
         uses: actions/upload-artifact@v2
         with:
@@ -73,4 +169,64 @@ jobs:
           artifact-name: sbom.spdx.json
           format: spdx-json
           path: target
- 
+
+  gitHubPakageArtifactPush:
+    name: Publish Artifact to GitHub Package
+    runs-on: ubuntu-latest 
+    needs: [slsa] 
+    
+    permissions: 
+      contents: read
+      packages: write 
+      
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v1
+        with:
+          fetch-depth: 0
+      - name: Set up JDK 8
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+      - name: Cache Maven packages
+        uses: actions/cache@v1
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-m2
+      - name: Publish package
+        run: mvn --batch-mode deploy -DskipTests
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}   
+
+  releaseTag:
+      name: Release Tag & Note Creation 
+      runs-on: ubuntu-latest
+      needs: [gitHubPakageArtifactPush]
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v2
+          with:
+            fetch-depth: 0
+        - name: Bump version and push tag
+          id: tag_version
+          uses: anothrNick/github-tag-action@1.26.0
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            WITH_V: true
+      
+        - name: Build Changelog
+          id: github_release
+          uses: mikepenz/release-changelog-builder-action@v1
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  
+        - name: Create Release
+          uses: actions/create-release@v1
+          with:
+            tag_name: ${{ steps.tag_version.outputs.new_tag }}
+            release_name: Release ${{ steps.tag_version.outputs.new_tag }}
+            body: ${{steps.github_release.outputs.changelog}}
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
+
