@@ -712,7 +712,7 @@ Add-ons like [Zephyr for Jira](https://smartbear.com/blog/test-management-jira-s
 
 To release the version in JIRA you can simply click on the “Release” button and set up the release date.
 
-Release not can be reported using the [Release Management Report](https://confluence.xpand-it.com/display/JIRA/Release+Management+Report) plugin.
+Release note can be created using the [Release Management Report](https://confluence.xpand-it.com/display/JIRA/Release+Management+Report) plugin.
 
 ![jirareleasenote](./doc/jirareleasenote.png)
 
