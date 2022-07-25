@@ -11,6 +11,17 @@
 
 This sample project is to demonstrate DevX - using an integrated cloud-based IDE for feature development, GitHub Action for CI/CD and JIRA for E2E Release Management.
 
+A positive developer experience can bring multiple benefits. Some of them are:
+
+* Departments collaborate better – open and transparent communication and trust between developers and other departments lead an organization to function well as a unit.
+* Productivity increases – providing good DX is one of the best ways to increase productivity within a dev team. Among other things, this means allowing developers to focus on the day-to-day work of building the products without any distractions.
+* Time-to-market is faster – because of increased developer productivity, work is done more efficiently. It speeds up the process of launching new products or new features on the market.
+* Motivation increases – providing an excellent developer experience gives the team the ability to solve interesting problems. They tackle interesting cases, develop their skills and work on their personal growth. When they are closer to the end customer, they feel more connected to the company’s mission.
+* Duplications and overhead are eliminated – working on good DX is a great way to eliminate bottlenecks in the development process and eliminate unnecessary tooling.
+* The team is more productive – because of the good DX, the team is more productive. This means that the team is more efficient and more efficient means that the team is more efficient.
+
+Integrated development environments, or IDEs, are software platforms that provide programmers and developers a comprehensive set of tools for software development in a single product. IDEs are built to work with specific application platforms and remove barriers involved in the lifecycle of software development.
+
 #### The tools used are listed below ####
 
 * Requirements & Planning
