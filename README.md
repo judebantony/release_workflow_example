@@ -685,10 +685,19 @@ If there is any warning or error will be shown in this tab.
 Warning or error can be configured using this tab. 
 ![managewarning](./doc/managewarning.png)
 
+### 4. Capture the evidences ###
+
 Capture all necessary evidence including [Testing reports - Jira Xray](https://marketplace.atlassian.com/apps/1211769/xray-test-management-for-jira?tab=overview&hosting=cloud), Security reports, [Code coverage reports](https://marketplace.atlassian.com/apps/1217471/sonarqube-connector-for-jira?tab=overview&hosting=cloud), etc. on the Jira release page.
 
+A test management solution helps software teams by addressing all the necessary functions needed to achieve faster and efficient testing, including test planning, creation, execution, and reporting. It makes it easier for organizations to manage and gain insights on a wide variety of tests, ranging from automation, manual, API, to unit tests.
+
+A test management tool provides two-way traceability reports that helps teams assess the appropriate test coverage and allows them to track relevant quality metrics, so they can closely check on the release progress and identify bottlenecks early on. This is especially important when organizations have multiple, globally distributed testing teams, as it gives the managers and executive team visibility across the entire testing process and ensure that teams are well aligned on the release goals.
+
+Add-ons like [Zephyr for Jira](https://smartbear.com/blog/test-management-jira-strategies/) or [X-ray for Jira](https://marketplace.atlassian.com/apps/1211769/xray-test-management-for-jira?tab=overview&hosting=cloud), which are internal integrations that live inside the Jira application and add testing functionality.  Test issues can be created, executed, tracked, and reported on just like any other Jira issue in Zephyr or X-Ray for Jira, which has the same look and feel as Jira
+
+### 5. Reporting releases ###
+
 To release the version in JIRA you can simply click on the “Release” button and set up the release date.
-### 4. Reporting releases ###
 
 Release not can be reported using the [Release Management Report](https://confluence.xpand-it.com/display/JIRA/Release+Management+Report) plugin.
 
