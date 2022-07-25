@@ -1,15 +1,25 @@
 # DevX & E2E Release Management
 
-
 # DevX - Cloud-Based IDE, JIRA and GitHub Action
 
-This sample projet is to demostrate DevX - using an integrated cloud-based IDE for feature development, GitHub Action for CI/CD and JIRA for E2E Release Management.
+This sample project is to demonstrate DevX - using an integrated cloud-based IDE for feature development, GitHub Action for CI/CD and JIRA for E2E Release Management.
 
-#### Tools used are listed below ####
+A positive developer experience can bring multiple benefits. Some of them are:
+
+* Departments collaborate better – open and transparent communication and trust between developers and other departments lead an organization to function well as a unit.
+* Productivity increases – providing good DX is one of the best ways to increase productivity within a dev team. Among other things, this means allowing developers to focus on the day-to-day work of building the products without any distractions.
+* Time-to-market is faster – because of increased developer productivity, work is done more efficiently. It speeds up the process of launching new products or new features on the market.
+* Motivation increases – providing an excellent developer experience gives the team the ability to solve interesting problems. They tackle interesting cases, develop their skills and work on their personal growth. When they are closer to the end customer, they feel more connected to the company’s mission.
+* Duplications and overhead are eliminated – working on good DX is a great way to eliminate bottlenecks in the development process and eliminate unnecessary tooling.
+* The team is more productive – because of the good DX, the team is more productive. This means that the team is more efficient and more efficient means that the team is more efficient.
+
+Integrated development environments, or IDEs, are software platforms that provide programmers and developers a comprehensive set of tools for software development in a single product. IDEs are built to work with specific application platforms and remove barriers involved in the lifecycle of software development.
+
+#### The tools used are listed below ####
 
 * Requirements & Planning
   * [JIRA](https://judebantony.atlassian.net)
-* Devlopment
+* Development
   * [VSCode](https://code.visualstudio.com/)
   * [CodeSpaces](https://codespace.io/)
   * [GitPod](https://gitpod.io/)
@@ -48,9 +58,10 @@ This sample projet is to demostrate DevX - using an integrated cloud-based IDE f
   * [Jira](https://judebantony.atlassian.net)
   * [GitHub Action](https://github.com/features/actions)
 
+
 ## IDE ##
 
-An integrated development environment is a software application that provides comprehensive facilities to computer programmers for software development. An IDE normally consists of at least a source code editor, build automation tools and a debugger. Here we use [Gitpod](https://gitpod.io/), [CodeSpaces](https://github.com/features/codespaces) & [VSCode](https://code.visualstudio.com) as an integrated development environment and [CoPilot](https://github.com/features/copilot) for AI based code completion.
+An integrated development environment is a software application that provides comprehensive facilities to computer programmers for software development. An IDE normally consists of at least a source code editor, build automation tools and a debugger. Here we use [Gitpod](https://gitpod.io/), [CodeSpaces](https://github.com/features/codespaces) & [VSCode](https://code.visualstudio.com) as an integrated development environment and [CoPilot](https://github.com/features/copilot) for AI-based code completion.
 
 * [CodeSpaces](https://github.com/features/codespaces)
     * CodeSpaces is a cloud-based IDE that is backed by high performance VMs that start in seconds..
@@ -61,16 +72,16 @@ An integrated development environment is a software application that provides co
 * [CoPilot](https://github.com/features/copilot)
     * GitHub Copilot uses the OpenAI Codex to suggest code and entire functions in real-time, right from your editor. 
 
-CoPilot is a powerful AI-powered code completion engine that can be used to provide code completion suggestions for any language. It is a powerful tool which helps you write better code, and it is a great way to learn new languages. In the below image, we can see CoPilot suggest code snippet for the language of our choice.
+CoPilot is a powerful AI-powered code completion engine that can be used to provide code completion suggestions for any language. It is a powerful tool that helps you write better code, and it is a great way to learn new languages. In the below image, we can see CoPilot suggests a code snippet for the language of our choice.
 ![copilot](./doc/copilot.png)
 
-Using [Gitpod](https://gitpod.io/), we are able to spin up a fresh dev environment for each task, in the cloud and will be able to open the IDE in the browser.
+Using [Gitpod](https://gitpod.io/), we can to spin up a fresh dev environment for each task, in the cloud and will be able to open the IDE in the browser.
 ![gitpod](./doc/gitpod.png)
 
 ## Plugins ##
 Plugins provide productivity-boosting capabilities within your favorite Integrated Development Environments (IDEs).
 VSCode plugins are available in the [marketplace](https://marketplace.visualstudio.com/vscode).
-Some of the pligins used are listed below.
+Some of the plugins used are listed below.
 
 * [GitHub Actions](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-github-actions)
 * [CodeSpaces](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-codespace)
@@ -90,7 +101,7 @@ Some of the pligins used are listed below.
 
 Lint, or a linter, is a static code analysis tool used to flag programming errors, bugs, stylistic errors and suspicious constructs. We use [SonarLint](https://marketplace.visualstudio.com/items?itemName=SonarSource.sonarlint-vscode), [BlackDuckLint](https://sig-docs.synopsys.com/codesight/topics/installation_guides/vscode/c_code_sight_vscode_ig_welcome.html) as a linter. It is a code analysis tool that analyzes code for errors, smells, and other problems. It is integrated with the IDE to detect changes in the code.
 
-This guarantees development team to “[shift left](https://www.devsecops.org/blog/2016/5/20/-security)” application security at the earliest stages in the development lifecycle, as part of DevSecOps (collaboration between development, security, and operations). To shift left means to move a process to the left on the traditional linear depiction of the software development lifecycle (SDLC). There are two common subjects of shift left initiatives in DevSecOps (security and testing).
+This guarantees the development team to “[shift left](https://www.devsecops.org/blog/2016/5/20/-security)” application security at the earliest stages in the development lifecycle, as part of DevSecOps (a collaboration between development, security, and operations). To shift left means to move a process to the left on the traditional linear depiction of the software development lifecycle (SDLC). There are two common subjects of shift left initiatives in DevSecOps (security and testing).
 SonarLint is a linter that is integrated with the IDE to detect code quality.
 ![sonarlint](./doc/sonarlint.png)
 GitLint is a linter that is integrated with the IDE to detect changes in the code.
@@ -98,9 +109,9 @@ GitLint is a linter that is integrated with the IDE to detect changes in the cod
 
 ## Jira and Github Integration - (Planning,Requirement & Test Execution) ##
 
-Jira and Github Integration will provide better traceability between Planning, Requirement, Code, Build and Test Execution.  [Linking your GitHub to Jira](https://support.atlassian.com/jira-cloud-administration/docs/integrate-with-github/) gives team the ability to see their branches, commit messages, build, test cases & results, pull requests and release information in the context of Jira tickets. More information can find [here.](https://github.blog/2018-10-04-announcing-the-new-github-and-jira-software-cloud-integration/). [VSCode](https://code.visualstudio.com) is integrated with Jira and Github using plugins, it is availbale in the [marketplace](https://marketplace.visualstudio.com/vscode).
+Jira and Github Integration will provide better traceability between Planning, Requirement, Code, Build and Test Execution.  [Linking your GitHub to Jira](https://support.atlassian.com/jira-cloud-administration/docs/integrate-with-github/) gives the team the ability to see their branches, commit messages, build, test cases & results, pull requests and release information in the context of Jira tickets. More information can find [here.](https://github.blog/2018-10-04-announcing-the-new-github-and-jira-software-cloud-integration/). [VSCode](https://code.visualstudio.com) is integrated with Jira and Github using plugins, it is available in the [marketplace](https://marketplace.visualstudio.com/vscode).
 
-Developer can see all the issues in the Jira in the IDE itself.
+The developer can see all the issues in the Jira in the IDE itself.
 ![jira](./doc/jira.png)
 
 When a developer makes a commit, they should add a Jira issue key to the commit message as shown below:
@@ -110,7 +121,7 @@ When a developer makes a commit, they should add a Jira issue key to the commit 
 Then GitHub Commit information would appear in Jira as shown below.
 ![jiragithub](./doc/jiragithub.png)
 
-Once GitHub Action build is completed, build information get reflected in Jira as shown below.
+Once GitHub Action build is completed, build information gets reflected in Jira as shown below.
 
 ![githubbuild](./doc/githubbuild.png)
 
@@ -127,14 +138,16 @@ Feature: Test Swagger UI
 
 ![githubtest](./doc/githubtest.png)
 
-Test results will be uploaded back to Jira to provide [Requirement Traceability Matrix](https://www.tutorialspoint.com/software_testing_dictionary/requirements_traceability_matrix.htm)
+Test results will be uploaded back to Jira to provide the [Requirement Traceability Matrix](https://www.tutorialspoint.com/software_testing_dictionary/requirements_traceability_matrix.htm)
 
 ![githubtest](./doc/githubtestrun.png)
 ![githubresult](./doc/githubresult.png)
 
 ## Feature-Driven Development ##
 
-Feature-driven development is an iterative and incremental software development process. It is a lightweight or Agile method for developing software. FDD blends a number of industry-recognized best practices into a cohesive whole. These practices are driven from a client-valued functionality perspective.
+Feature-driven development is an iterative and incremental software development process. It is a lightweight or Agile method for developing software. FDD blends several industry-recognized best practices into a cohesive whole. These practices are driven from a client-valued functionality perspective.
+
+To provide better developer experience and to reduce the time to develop a new feature, the developer shoud be able to perform all his/her task in the IDE itself. The developers normally focus on the following aspects using the IDE for every feature development:
 
 ## 1. Cloning the repository ##
 
@@ -142,14 +155,14 @@ Clone the repository using [VSCode](https://code.visualstudio.com) [GitHub plugi
 ![clonetherepo](./doc/clonetherepo.png)
 ![selecttherepoforcloning](./doc/selecttherepoforcloning.png)
 
-## 2. Create a Jira Tasks ##
+## 2. Create a Jira Ticket ##
 
-Create Jira task and assigne to the devloper for development using [VSCode](https://code.visualstudio.com) [Jira plugin](https://marketplace.visualstudio.com/items?itemName=Atlassian.atlascode).
+Create Jira task and assign to the developer for development using [VSCode](https://code.visualstudio.com) [Jira plugin](https://marketplace.visualstudio.com/items?itemName=Atlassian.atlascode).
 ![create_jira_issue](./doc/create_jira_issue.png)
 
-## 3. Start working on the task ##
+## 3. Start working on the ticket/task ##
 
-* Start working on the Jira task by create feature branch using [VSCode](https://code.visualstudio.com) [Jira plugin](https://marketplace.visualstudio.com/items?itemName=Atlassian.atlascode).
+* Start working on the Jira task by creating a feature branch using [VSCode](https://code.visualstudio.com) [Jira plugin](https://marketplace.visualstudio.com/items?itemName=Atlassian.atlascode).
 ![startwork](./doc/startwork.png)
 ![creatingbranch](./doc/creatingbranch.png)
 
@@ -159,7 +172,7 @@ Create Jira task and assigne to the devloper for development using [VSCode](http
 * Start developing the code using [VSCode](https://code.visualstudio.com) and [CoPilot](https://github.com/features/copilot).
 ![copilot](./doc/copilot.png)
 
-* Commit the changes and push to the remote repository.
+* Commit the changes and push them to the remote repository.
 ![commitingcode](./doc/commitingcode.png)
 
 * Once the code is committed, build the code using [GitHub Action](https://github.com/features/actions). Github Action log can be found in the IDE. The plugin used for this is [GitHub Action](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-github-action).
@@ -172,12 +185,12 @@ If you want to update any github action configuration then you can do it using [
 * Run the unit tests and capture the result in Jira using Xray.
 ![githubtest](./doc/githubtest.png)
 
-Test results will be uploaded back to Jira to provide [Requirement Traceability Matrix](https://www.tutorialspoint.com/software_testing_dictionary/requirements_traceability_matrix.htm)
+Test results will be uploaded back to Jira to provide the [Requirement Traceability Matrix](https://www.tutorialspoint.com/software_testing_dictionary/requirements_traceability_matrix.htm)
 
 ![githubtest](./doc/githubtestrun.png)
 ![githubresult](./doc/githubresult.png)
 
-* Once we are done with the development of the task, we can create a pull request to the main branch. Pull request can be created using [VSCode](https://code.visualstudio.com) [GitHub plugin](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-github).
+* Once we are done with the development of the task, we can create a pull request to the main branch. Pull requests can be created using [VSCode](https://code.visualstudio.com) [GitHub plugin](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-github).
 ![createpullrequest](./doc/createpullrequest.png)
 ![createdpullrequestgit](./doc/createdpullrequestgit.png)
 
@@ -191,16 +204,16 @@ Test results will be uploaded back to Jira to provide [Requirement Traceability 
 
 Integration & Implementation of E2E CI/CD release workflow using [Github Action](https://github.com/features/actions), this has been achieved using different Cloud SaaS tools listed below.
 
-[Supply chain Levels for Software Artifacts, or SLSA (salsa)](https://slsa.dev) a security framework, a check-list of standards and controls to prevent tampering, improve integrity, and secure packages and infrastructure in your projects, businesses or enterprises. It’s how you get from safe enough to being as resilient as possible, at any link in the chain.
+[Supply chain Levels for Software Artifacts, or SLSA (salsa)](https://slsa.dev) is a security framework, a check-list of standards and controls to prevent tampering, improve the integrity, and secure packages and infrastructure in your projects, businesses or enterprises. It’s how you get from being safe enough to be as resilient as possible, at any link in the chain.
 
-E2E github action workflow, we implimented has got combination of CI/CD and SLSA.
+E2E github action workflow, we implemented has got a combination of CI/CD and SLSA.
 ![githubactionworkflow](./doc/githubactionworkflow.png)
 
 ### 1. Maven - Build and Unit Test ###
 
 [Apache Maven](https://maven.apache.org) is a software project management and comprehension tool. Based on the concept of a project object model (POM), Maven can manage a project's build, reporting and documentation from a central piece of information.
 
-Code is build using [Maven](https://maven.apache.org) and unit test cases are executed using [JUnit](https://junit.org/junit5/)
+Code is built using [Maven](https://maven.apache.org) and unit test cases are executed using [JUnit](https://junit.org/junit5/)
 The test coverage result, which is aggregated by [Jacoco](https://www.baeldung.com/sonarqube-jacoco-code-coverage) would be uploaded to [Github Action](https://github.com/features/actions) as artifacts. Please check [pom.xml](https://github.com/judebantony/cicd-github-action-example/tree/main/pom.xml) as well.
 
 ```yaml
@@ -284,7 +297,7 @@ Sample test result:-
 
 [SonarQube](https://www.sonarqube.org) is an open-source platform developed by SonarSource for continuous inspection of code quality to perform automatic reviews with static analysis of code to detect bugs, code smells, and security vulnerabilities on 20+ programming languages.
 
-Inspect the code using [SonarQube](https://www.sonarqube.org) and enable the Quality Gate Check in CI/CD workflow.
+Inspect the code using [SonarQube](https://www.sonarqube.org) and enable the Quality Gate Check-in CI/CD workflow.
 Results are uploaded to [SonarQube](https://www.sonarqube.org) Cloud SaaS offering. GitHub integration with SonarQube can find [here](https://docs.sonarqube.org/latest/analysis/github-integration/).
 
 ```yaml
@@ -540,7 +553,7 @@ GitHub Package UI:-
 
 [XRay](https://www.getxray.app) is a Test Management tool integrated with Jira. Built for every member of your team to plan, test, track and release great software · Manage all your tests as Jira issues.
 
-Xray Jira plugin is used to create the test case in [Gherkin](https://cucumber.io/docs/gherkin/) and [Cucumber](https://cucumber.io) for each Jira story and executed as part of CI/CD pipleline(GitHub Action). The result is uploaded back to Jira. XRay Test Execution config file is present [here](https://github.com/judebantony/cicd-github-action-example/tree/main/testexec_cloud_template.json).
+Xray Jira plugin is used to create the test case in [Gherkin](https://cucumber.io/docs/gherkin/) and [Cucumber](https://cucumber.io) for each Jira story and executed as part of CI/CD pipeline(GitHub Action). The result is uploaded back to Jira. XRay Test Execution config file is present [here](https://github.com/judebantony/cicd-github-action-example/tree/main/testexec_cloud_template.json).
 
 ```yaml
 
@@ -654,7 +667,7 @@ Given a version number MAJOR.MINOR.PATCH, increment the:
 
 MAJOR version when you make incompatible API changes
 MINOR version when you add functionality in a backwards compatible manner
-PATCH version when you make backwards compatible bug fixes
+PATCH version when you make backward-compatible bug fixes
 Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
 
 ![createversion](./doc/createversion.png)
@@ -662,23 +675,35 @@ Additional labels for pre-release and build metadata are available as extensions
 
 ### 2. Assigning the tasks to the versions ###
 
-We use Sprint board with various statuses columns to move the ticket throughout its lifecycle.
-The version should be assigned to the ticket while changing the status into “Awaiting release” on Sprint board. It means that the feature was well-tested, merged to “release” branch and is waiting to be released (deployed to the needed non-prod environment).
+We use the Sprint board with various status columns to move the ticket throughout its lifecycle.
+The version should be assigned to the ticket while changing the status into “Awaiting release” on the Sprint board. It means that the feature was well-tested, merged to the “release” branch, and is waiting to be released (deployed to the needed non-prod environment).
 
 ![sprintboard](./doc/sprintboard.png)
 ### 3. Tracking releases ###
-The release may contain the tasks with different statuses (e.g. “In progress”, “Reopened” or even “Closed”). JIRA will not allow you to release the version until the team complete all the tasks or remove the task from the current release.
+The release may contain the tasks with different statuses (e.g. “In progress”, “Reopened” or even “Closed”). JIRA will not allow you to release the version until the team completes all the tasks or remove the task from the current release.
 The “release” branch should contain all the required features to be delivered under the current release. All the tasks on the Scrum board should be in “Closed” status.
+
 ![release](./doc/release.png)
+
 If there is any warning or error will be shown in this tab.
 ![warning](./doc/warning.png)
-Warning or error can we configured using this tab. 
+
+Warning or error can be configured using this tab. 
 ![managewarning](./doc/managewarning.png)
 
-Capture all necessary evidences including [Testing reports - Jira Xray](https://marketplace.atlassian.com/apps/1211769/xray-test-management-for-jira?tab=overview&hosting=cloud), Security reports, [Code coverage reports](https://marketplace.atlassian.com/apps/1217471/sonarqube-connector-for-jira?tab=overview&hosting=cloud), etc. in the Jira release page.
+### 4. Capture the evidences ###
 
-To release the version in JIRA you can simply click on “Release” button and set up the release date.
-### 4. Reporting releases ###
+Capture all necessary evidence including [Testing reports - Jira Xray](https://marketplace.atlassian.com/apps/1211769/xray-test-management-for-jira?tab=overview&hosting=cloud), Security reports, [Code coverage reports](https://marketplace.atlassian.com/apps/1217471/sonarqube-connector-for-jira?tab=overview&hosting=cloud), etc. on the Jira release page.
+
+A test management solution helps software teams by addressing all the necessary functions needed to achieve faster and efficient testing, including test planning, creation, execution, and reporting. It makes it easier for organizations to manage and gain insights on a wide variety of tests, ranging from automation, manual, API, to unit tests.
+
+A test management tool provides two-way traceability reports that helps teams assess the appropriate test coverage and allows them to track relevant quality metrics, so they can closely check on the release progress and identify bottlenecks early on. This is especially important when organizations have multiple, globally distributed testing teams, as it gives the managers and executive team visibility across the entire testing process and ensure that teams are well aligned on the release goals.
+
+Add-ons like [Zephyr for Jira](https://smartbear.com/blog/test-management-jira-strategies/) or [X-ray for Jira](https://marketplace.atlassian.com/apps/1211769/xray-test-management-for-jira?tab=overview&hosting=cloud), which are internal integrations that live inside the Jira application and add testing functionality.  Test issues can be created, executed, tracked, and reported on just like any other Jira issue in Zephyr or X-Ray for Jira, which has the same look and feel as Jira.
+
+### 5. Reporting releases ###
+
+To release the version in JIRA you can simply click on the “Release” button and set up the release date.
 
 Release not can be reported using the [Release Management Report](https://confluence.xpand-it.com/display/JIRA/Release+Management+Report) plugin.
 
