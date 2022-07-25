@@ -143,6 +143,8 @@ Test results will be uploaded back to Jira to provide the [Requirement Traceabil
 
 Feature-driven development is an iterative and incremental software development process. It is a lightweight or Agile method for developing software. FDD blends several industry-recognized best practices into a cohesive whole. These practices are driven from a client-valued functionality perspective.
 
+To provide better developer experience and to reduce the time to develop a new feature, the developer shoud be able to perform all his/her task in the IDE itself. The developers normally focus on the following aspects using the IDE for every feature development:
+
 ## 1. Cloning the repository ##
 
 Clone the repository using [VSCode](https://code.visualstudio.com) [GitHub plugin](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-github).
@@ -693,7 +695,7 @@ A test management solution helps software teams by addressing all the necessary 
 
 A test management tool provides two-way traceability reports that helps teams assess the appropriate test coverage and allows them to track relevant quality metrics, so they can closely check on the release progress and identify bottlenecks early on. This is especially important when organizations have multiple, globally distributed testing teams, as it gives the managers and executive team visibility across the entire testing process and ensure that teams are well aligned on the release goals.
 
-Add-ons like [Zephyr for Jira](https://smartbear.com/blog/test-management-jira-strategies/) or [X-ray for Jira](https://marketplace.atlassian.com/apps/1211769/xray-test-management-for-jira?tab=overview&hosting=cloud), which are internal integrations that live inside the Jira application and add testing functionality.  Test issues can be created, executed, tracked, and reported on just like any other Jira issue in Zephyr or X-Ray for Jira, which has the same look and feel as Jira
+Add-ons like [Zephyr for Jira](https://smartbear.com/blog/test-management-jira-strategies/) or [X-ray for Jira](https://marketplace.atlassian.com/apps/1211769/xray-test-management-for-jira?tab=overview&hosting=cloud), which are internal integrations that live inside the Jira application and add testing functionality.  Test issues can be created, executed, tracked, and reported on just like any other Jira issue in Zephyr or X-Ray for Jira, which has the same look and feel as Jira.
 
 ### 5. Reporting releases ###
 
