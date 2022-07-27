@@ -1,4 +1,4 @@
-# DevX & E2E Release Management
+# DevEx & E2E Release Management
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/judebantony/release_workflow_example)
 
@@ -7,18 +7,18 @@
 
 
 
-# DevX - Cloud-Based IDE, JIRA and GitHub Action
+# DevEx - Cloud-Based IDE, JIRA and GitHub Action
 
-This sample project is to demonstrate DevX - using an integrated cloud-based IDE for feature development, GitHub Action for CI/CD and JIRA for E2E Release Management.
+This sample project is to demonstrate DevEx - using an integrated cloud-based IDE for feature development, GitHub Action for CI/CD and JIRA for E2E Release Management.
 
 A positive developer experience can bring multiple benefits. Some of them are:
 
 * Departments collaborate better – open and transparent communication and trust between developers and other departments lead an organization to function well as a unit.
 * Productivity increases – providing good DX is one of the best ways to increase productivity within a dev team. Among other things, this means allowing developers to focus on the day-to-day work of building the products without any distractions.
-* Time-to-market is faster – because of increased developer productivity, work is done more efficiently. It speeds up the process of launching new products or new features on the market.
+* Time-to-market is faster – because of increased developer productivity, work is done more efficiently. It speeds up the process of launching new products or new features to the market.
 * Motivation increases – providing an excellent developer experience gives the team the ability to solve interesting problems. They tackle interesting cases, develop their skills and work on their personal growth. When they are closer to the end customer, they feel more connected to the company’s mission.
-* Duplications and overhead are eliminated – working on good DX is a great way to eliminate bottlenecks in the development process and eliminate unnecessary tooling.
-* The team is more productive – because of the good DX, the team is more productive. This means that the team is more efficient and more efficient means that the team is more efficient.
+* Duplications and overhead are eliminated – working on good DevEx is a great way to eliminate bottlenecks in the development process and eliminate unnecessary tooling.
+
 
 Integrated development environments, or IDEs, are software platforms that provide programmers and developers a comprehensive set of tools for software development in a single product. IDEs are built to work with specific application platforms and remove barriers involved in the lifecycle of software development.
 
@@ -68,7 +68,7 @@ Integrated development environments, or IDEs, are software platforms that provid
 
 ## IDE ##
 
-An integrated development environment is a software application that provides comprehensive facilities to computer programmers for software development. An IDE normally consists of at least a source code editor, build automation tools and a debugger. Here we use [Gitpod](https://gitpod.io/), [CodeSpaces](https://github.com/features/codespaces) & [VSCode](https://code.visualstudio.com) as an integrated development environment and [CoPilot](https://github.com/features/copilot) for AI-based code completion.
+An integrated development environment is a software application that provides comprehensive facilities to computer programmers for software development. An IDE normally consists of atleast a source code editor, build automation tools and a debugger. Here we use [Gitpod](https://gitpod.io/), [CodeSpaces](https://github.com/features/codespaces) & [VSCode](https://code.visualstudio.com) as an integrated development environment and [CoPilot](https://github.com/features/copilot) for AI-based code completion.
 
 * [CodeSpaces](https://github.com/features/codespaces)
     * CodeSpaces is a cloud-based IDE that is backed by high performance VMs that start in seconds..
@@ -79,7 +79,7 @@ An integrated development environment is a software application that provides co
 * [CoPilot](https://github.com/features/copilot)
     * GitHub Copilot uses the OpenAI Codex to suggest code and entire functions in real-time, right from your editor. 
 
-CoPilot is a powerful AI-powered code completion engine that can be used to provide code completion suggestions for any language. It is a powerful tool that helps you write better code, and it is a great way to learn new languages. In the below image, we can see CoPilot suggests a code snippet for the language of our choice.
+CoPilot is a powerful AI-powered code completion engine that can be used to provide code completion suggestions for any language. It is a powerful tool that helps you write better code, and it is a great way to learn new languages. In the below image, we can see CoPilot suggesting a code snippet for the language of our choice.
 ![copilot](./doc/copilot.png)
 
 Using [Gitpod](https://gitpod.io/), we can to spin up a fresh dev environment for each task, in the cloud and will be able to open the IDE in the browser.
@@ -663,7 +663,7 @@ Release Tag:-
 
 According to Wikipedia, release management is the process of managing, planning, scheduling and controlling a software build through different stages and environments; it includes testing and deploying software releases. It ensures that release teams efficiently deliver the applications and upgrades required by the business while maintaining the integrity of the existing production environment.
 
-Release management flow using [JIRA](https://community.atlassian.com/t5/Marketplace-Apps-Integrations/Release-Management-is-the-next-big-thing-for-Atlassian-Jira/ba-p/1348276) and Confluence consists of several steps:
+Release management flow using [JIRA](https://community.atlassian.com/t5/Marketplace-Apps-Integrations/Release-Management-is-the-next-big-thing-for-Atlassian-Jira/ba-p/1348276),GitHub Action and Confluence consists of several steps:
 
 
 ### 1. Create a version for the next release ###
