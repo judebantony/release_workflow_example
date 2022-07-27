@@ -82,7 +82,7 @@ An integrated development environment is a software application that provides co
 CoPilot is a powerful AI-powered code completion engine that can be used to provide code completion suggestions for any language. It is a powerful tool that helps you write better code, and it is a great way to learn new languages. In the below image, we can see CoPilot suggesting a code snippet for the language of our choice.
 ![copilot](./doc/copilot.png)
 
-Using [Gitpod](https://gitpod.io/), we can to spin up a fresh dev environment for each task, in the cloud and will be able to open the IDE in the browser.
+Using [Gitpod](https://gitpod.io/), we can spin up a fresh dev environment for each task, in the cloud and will be able to open the IDE in the browser.
 ![gitpod](./doc/gitpod.png)
 
 ## Plugins ##
@@ -154,7 +154,7 @@ Test results will be uploaded back to Jira to provide the [Requirement Traceabil
 
 Feature-driven development is an iterative and incremental software development process. It is a lightweight or Agile method for developing software. FDD blends several industry-recognized best practices into a cohesive whole. These practices are driven from a client-valued functionality perspective.
 
-To provide better developer experience and to reduce the time to develop a new feature, the developer shoud be able to perform all his/her task in the IDE itself. The developers normally focus on the following aspects using the IDE for every feature development:
+To provide better developer experience and to reduce the time to develop a new feature, the developer should be able to perform all his/her task in the IDE itself. The developers normally focus on the following aspects using the IDE for every feature development:
 
 ## 1. Cloning the repository ##
 
@@ -209,11 +209,11 @@ Test results will be uploaded back to Jira to provide the [Requirement Traceabil
 
 ## Continuous Integration & SLSA ##
 
-Integration & Implementation of E2E CI/CD release workflow using [Github Action](https://github.com/features/actions), this has been achieved using different Cloud SaaS tools listed below.
+Implementation of E2E CI/CD release workflow using [Github Action](https://github.com/features/actions), this has been achieved using different Cloud SaaS tools listed below.
 
-[Supply chain Levels for Software Artifacts, or SLSA (salsa)](https://slsa.dev) is a security framework, a check-list of standards and controls to prevent tampering, improve the integrity, and secure packages and infrastructure in your projects, businesses or enterprises. It’s how you get from being safe enough to be as resilient as possible, at any link in the chain.
+[Supply chain Levels for Software Artifacts, or SLSA (salsa)](https://slsa.dev) is a security framework, a check-list of standards and controls to prevent tampering, improve the integrity, secure packages and infrastructure in your projects, businesses or enterprises. It’s how you get from being safe enough to be as resilient as possible, at any link in the chain.
 
-E2E github action workflow, we implemented has got a combination of CI/CD and SLSA.
+We have implemented a combination of CI/CD and SLSA and E2E GitHub Action workflow is shown below:
 ![githubactionworkflow](./doc/githubactionworkflow.png)
 
 ### 1. Maven - Build and Unit Test ###
@@ -305,7 +305,7 @@ Sample test result:-
 [SonarQube](https://www.sonarqube.org) is an open-source platform developed by SonarSource for continuous inspection of code quality to perform automatic reviews with static analysis of code to detect bugs, code smells, and security vulnerabilities on 20+ programming languages.
 
 Inspect the code using [SonarQube](https://www.sonarqube.org) and enable the Quality Gate Check-in CI/CD workflow.
-Results are uploaded to [SonarQube](https://www.sonarqube.org) Cloud SaaS offering. GitHub integration with SonarQube can find [here](https://docs.sonarqube.org/latest/analysis/github-integration/).
+Results are uploaded to [SonarQube](https://www.sonarqube.org) Cloud SaaS offering. GitHub integration with SonarQube can be found [here](https://docs.sonarqube.org/latest/analysis/github-integration/).
 
 ```yaml
   sonar:
@@ -368,7 +368,7 @@ Quality Gate Check:-
 
 [CodeQL](https://codeql.github.com) is the code analysis engine developed by GitHub to automate security checks. You can analyze your code using CodeQL and display the results as code scanning alerts.
 
-Use the native Github Action [CodeQL](https://codeql.github.com) for SAST scan and upload the result to [GitHub Advanced Security](https://github.com/security) tab. Configuring CodeQL code scanning can find [here](https://docs.github.com/en/code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/configuring-code-scanning).
+Use the native Github Action [CodeQL](https://codeql.github.com) for SAST scan and upload the result to [GitHub Advanced Security](https://github.com/security) tab. Configuring CodeQL code scanning can be found [here](https://docs.github.com/en/code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/configuring-code-scanning).
 
 ```yaml
   codeqlScan:
@@ -406,7 +406,7 @@ GitHub Advanced Security Tab:-
 
 ### 4. Dependabot - SCA ###
 
-Use the github native [Dependabot](https://docs.github.com/en/code-security/supply-chain-security/managing-vulnerabilities-in-your-projects-dependencies/configuring-dependabot-security-updates) for SCA scan and upload the result to [GitHub Advanced Security](https://github.com/security) tab. Enabling the dependabot in GitHub can find [here](https://docs.github.com/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically/enabling-and-disabling-dependabot-version-updates).
+Use the github native [Dependabot](https://docs.github.com/en/code-security/supply-chain-security/managing-vulnerabilities-in-your-projects-dependencies/configuring-dependabot-security-updates) for SCA scan and upload the result to [GitHub Advanced Security](https://github.com/security) tab. Enabling the dependabot in GitHub can be found [here](https://docs.github.com/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically/enabling-and-disabling-dependabot-version-updates).
 
 ```yaml
 
@@ -454,7 +454,7 @@ Use [Trufflehog](https://trufflesecurity.com/trufflehog) to find any secrets pre
 
 [SBOM, or a Software Bill of Materials](https://slsa.dev/blog/2022/05/slsa-sbom). Acting as an “ingredient” label for software, SBOMs are documents that provide a nested list of packages and components included in a piece of software. SBOMs are well positioned to help consumers better manage the risks of the software they consume and to respond more easily to vulnerabilities.
 
-[SLSA (Supply-chain Levels for Software Artifacts)](https://slsa.dev/blog/2022/05/slsa-sbom), a framework for creating a secure software supply chain, can address each of these potential areas for improvement when used in conjunction with SBOMs. This blog post explains the strengths of SBOMs and SLSA and how they fundamentally differ, and shows how SLSA principles can both support the generation of high-quality SBOMs and help consumers respond to supply chain attacks.
+[SLSA (Supply-chain Levels for Software Artifacts)](https://slsa.dev/blog/2022/05/slsa-sbom), a framework for creating a secure software supply chain, can address each of these potential areas for improvement when used in conjunction with SBOMs. This blog post explains the strengths of SBOMs and SLSA and how they fundamentally differ and shows how SLSA principles can both support the generation of high-quality SBOMs and help consumers respond to supply chain attacks.
 
 ```yaml
 
@@ -498,8 +498,9 @@ Use [Trufflehog](https://trufflesecurity.com/trufflehog) to find any secrets pre
           path: target
 ```
 
-Sample SBOM:- [sbom](https://github.com/judebantony/release_workflow_example/tree/main/doc/sbom.spdx.json)
-Sample SLSA Provenance:- [slsa](https://github.com/judebantony/release_workflow_example/tree/main/doc/buid.provenance)
+Sample SBOM file:- [SBOM](https://github.com/judebantony/release_workflow_example/tree/main/doc/sbom.spdx.json) 
+</br>
+Sample SLSA Provenance file:- [SLSA](https://github.com/judebantony/release_workflow_example/tree/main/doc/buid.provenance)
 ### 7. GitHub Package - Publish Artifact(jar) ###
 
 [Github Packages](https://docs.github.com/en/packages/learn-github-packages/introduction-to-github-packages) is a software package hosting service that allows you to host your software packages privately or publicly and use packages as dependencies in your projects.
@@ -558,7 +559,7 @@ GitHub Package UI:-
 
 ### 8. Functional Test using Xray and Jira ###
 
-[XRay](https://www.getxray.app) is a Test Management tool integrated with Jira. Built for every member of your team to plan, test, track and release great software · Manage all your tests as Jira issues.
+[XRay](https://www.getxray.app) is a Test Management tool integrated with Jira. Built for every member of your team to plan, test, track and release great software. It manages all your testplans and testcases as Jira issues.
 
 Xray Jira plugin is used to create the test case in [Gherkin](https://cucumber.io/docs/gherkin/) and [Cucumber](https://cucumber.io) for each Jira story and executed as part of CI/CD pipeline(GitHub Action). The result is uploaded back to Jira. XRay Test Execution config file is present [here](https://github.com/judebantony/cicd-github-action-example/tree/main/testexec_cloud_template.json).
 
@@ -670,8 +671,7 @@ Release management flow using [JIRA](https://community.atlassian.com/t5/Marketpl
 
 Create a version in JIRA using the [Semantic Versioning 2.0.0](https://semver.org) 
 
-Given a version number MAJOR.MINOR.PATCH, increment the:
-
+Give a version number MAJOR.MINOR.PATCH, values need to be incremented using the following rules:
 MAJOR version when you make incompatible API changes
 MINOR version when you add functionality in a backwards compatible manner
 PATCH version when you make backward-compatible bug fixes
@@ -683,7 +683,7 @@ Additional labels for pre-release and build metadata are available as extensions
 ### 2. Assigning the tasks to the versions ###
 
 We use the Sprint board with various status columns to move the ticket throughout its lifecycle.
-The version should be assigned to the ticket while changing the status into “Awaiting release” on the Sprint board. It means that the feature was well-tested, merged to the “release” branch, and is waiting to be released (deployed to the needed non-prod environment).
+The version should be assigned to the ticket while changing the status into “Awaiting release” on the Sprint board. It means that the feature was well-tested, merged to the “release” branch and is waiting to be released (deployed to the required non-prod environment).
 
 ![sprintboard](./doc/sprintboard.png)
 ### 3. Tracking releases ###
@@ -698,24 +698,32 @@ If there is any warning or error will be shown in this tab.
 Warning or error can be configured using this tab. 
 ![managewarning](./doc/managewarning.png)
 
-### 4. Capture the evidences ###
+### 4. Release Branch and PR Creation ### 
 
-Capture all necessary evidence including [Testing reports - Jira Xray](https://marketplace.atlassian.com/apps/1211769/xray-test-management-for-jira?tab=overview&hosting=cloud), Security reports, [Code coverage reports](https://marketplace.atlassian.com/apps/1217471/sonarqube-connector-for-jira?tab=overview&hosting=cloud), etc. on the Jira release page.
+Once the team has completed the development cycle, a release branch is created from the main branch. A Pull Request(PR) is raised from integration branch to release branch.
+### 5. Release Build, Deployment and Test ###
 
-A test management solution helps software teams by addressing all the necessary functions needed to achieve faster and efficient testing, including test planning, creation, execution, and reporting. It makes it easier for organizations to manage and gain insights on a wide variety of tests, ranging from automation, manual, API, to unit tests.
+Perform release candidate(RC) build and deploy the application to the non-production environment from the release branch. The application should be tested and validated using automated testing tools.
+
+A test management solution helps software teams by addressing all the necessary functions needed to achieve faster and efficient testing, including test planning, creation, execution, and reporting. It makes it easier for organizations to manage and gain insights on a wide variety of tests ranging from automation, manual to unit tests.
 
 A test management tool provides two-way traceability reports that helps teams assess the appropriate test coverage and allows them to track relevant quality metrics, so they can closely check on the release progress and identify bottlenecks early on. This is especially important when organizations have multiple, globally distributed testing teams, as it gives the managers and executive team visibility across the entire testing process and ensure that teams are well aligned on the release goals.
 
-Add-ons like [Zephyr for Jira](https://smartbear.com/blog/test-management-jira-strategies/) or [X-ray for Jira](https://marketplace.atlassian.com/apps/1211769/xray-test-management-for-jira?tab=overview&hosting=cloud), which are internal integrations that live inside the Jira application and add testing functionality.  Test issues can be created, executed, tracked, and reported on just like any other Jira issue in Zephyr or X-Ray for Jira, which has the same look and feel as Jira.
+Add-ons like [Zephyr for Jira](https://smartbear.com/blog/test-management-jira-strategies/) or [X-ray for Jira](https://marketplace.atlassian.com/apps/1211769/xray-test-management-for-jira?tab=overview&hosting=cloud), which are internal integrations that live inside the Jira application and add testing functionality.  Test issues can be created, executed, tracked and reported just like any other Jira issue in Zephyr or X-Ray for Jira, which has the same look and feel as Jira.
 
-### 5. Reporting releases ###
+Release github action workflow:
+![githubactionworkflow](./doc/githubactionworkflow.png)
 
-To release the version in JIRA you can simply click on the “Release” button and set up the release date.
+### 6. Capture the evidences ###
+
+Capture all necessary evidence including [Testing reports](https://marketplace.atlassian.com/apps/1211769/xray-test-management-for-jira?tab=overview&hosting=cloud), Security reports, [Code coverage reports](https://marketplace.atlassian.com/apps/1217471/sonarqube-connector-for-jira?tab=overview&hosting=cloud) etc. on the Jira release page.
+### 7. Reporting releases ###
+
+To release the version in JIRA you can simply click on the “Release” button and set up the release date. 
 
 Release note can be created using the [Release Management Report](https://confluence.xpand-it.com/display/JIRA/Release+Management+Report) plugin.
 
 ![jirareleasenote](./doc/jirareleasenote.png)
-
 
 ## Author
 
