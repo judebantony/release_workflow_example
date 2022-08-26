@@ -20,9 +20,5 @@ public class E2EReleaseGitHubActionApplication {
 		SpringApplication.exit(SpringApplication.run(E2EReleaseGitHubActionApplication.class));
 	}
 
-	// calculate two digits after decimal point
-	void calculatetwoDigitsAfterDecimalPoint(double value) {
-		System.out.println(value);
-		System.out.println(Math.round(value * 100.0) / 100.0);
-	}
+	
 }

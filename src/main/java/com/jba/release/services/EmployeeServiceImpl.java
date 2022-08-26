@@ -10,19 +10,21 @@ public class EmployeeServiceImpl implements EmployeeService {
     
     @Override
     public Employee getEmployee(int id) {
-        return null;
+        return new Employee(id, "John", "New York", "");
+        
     }
 
     @Override
     public Employee getEmployee(String name) {
-        // TODO Auto-generated method stub
-        return null;
+        return new Employee(1, name, "New York", "");
+
     }
 
     @Override
     public Employee getEmployee(int id, String name) {
-        // TODO Auto-generated method stub
-        return null;
+        return new Employee(id, name, "New York", "");
+
+        
     }
 
     
