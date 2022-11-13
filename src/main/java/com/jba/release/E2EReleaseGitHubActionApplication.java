@@ -26,9 +26,5 @@ public class E2EReleaseGitHubActionApplication {
 		System.out.println(Math.round(value * 100.0) / 100.0);
 	}
 
-	// restapi for helth check
-	@GetMapping("/health")
-	public void helthCheck() {
-		System.out.println("Helth check");
-	}
+
 }
