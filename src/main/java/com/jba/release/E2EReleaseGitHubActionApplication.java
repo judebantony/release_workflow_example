@@ -26,4 +26,5 @@ public class E2EReleaseGitHubActionApplication {
 		System.out.println(Math.round(value * 100.0) / 100.0);
 	}
 
+
 }
